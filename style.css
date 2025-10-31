@@ -5,6 +5,8 @@
     box-sizing: border-box;
 }
 
+/* create branch */
+
 /* Styling untuk body halaman */
 body {
     display: flex;
@@ -84,8 +86,13 @@ h1 {
 
 /* Animasi untuk power pellet */
 @keyframes pulse {
-    from { opacity: 1; }
-    to { opacity: 0.3; }
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.3;
+    }
 }
 
 /* Styling untuk Pacman */
@@ -162,16 +169,24 @@ h1 {
 }
 
 /* Warna untuk hantu Blinky */
-.blinky { background-color: red; }
+.blinky {
+    background-color: red;
+}
 
 /* Warna untuk hantu Pinky */
-.pinky { background-color: pink; }
+.pinky {
+    background-color: pink;
+}
 
 /* Warna untuk hantu Inky */
-.inky { background-color: cyan; }
+.inky {
+    background-color: cyan;
+}
 
 /* Warna untuk hantu Clyde */
-.clyde { background-color: orange; }
+.clyde {
+    background-color: orange;
+}
 
 /* Styling untuk hantu saat takut */
 .scared {
@@ -181,8 +196,13 @@ h1 {
 
 /* Animasi untuk hantu takut */
 @keyframes scared-animation {
-    from { opacity: 1; }
-    to { opacity: 0.7; }
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0.7;
+    }
 }
 
 /* Container untuk kontrol game */
@@ -219,7 +239,8 @@ button:hover {
 }
 
 /* Styling untuk layar game over dan menang */
-.game-over, .game-won {
+.game-over,
+.game-won {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -232,7 +253,8 @@ button:hover {
 }
 
 /* Styling untuk judul game over dan menang */
-.game-over h2, .game-won h2 {
+.game-over h2,
+.game-won h2 {
     color: red;
     margin-bottom: 20px;
 }
