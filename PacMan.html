@@ -1,34 +1,37 @@
+<!-- ganti branch -->
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacman Game</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>PACMAN GAME</h1>
-    
+
     <div class="game-container">
         <div class="game-info">
             <div>Score: <span id="score">0</span></div>
             <div>Lives: <span id="lives">3</span></div>
         </div>
-        
+
         <div id="game-board"></div>
-        
+
         <div class="controls">
             <button id="start-btn">Start Game</button>
             <button id="reset-btn">Reset Game</button>
         </div>
     </div>
-    
+
     <div id="game-over" class="game-over">
         <h2>GAME OVER</h2>
         <p>Skor akhir: <span id="final-score">0</span></p>
         <button id="restart-btn">Main Lagi</button>
     </div>
-    
+
     <div id="game-won" class="game-won">
         <h2>YOU WIN!</h2>
         <p>Skor akhir: <span id="win-score">0</span></p>
@@ -43,4 +46,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
