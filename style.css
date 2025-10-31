@@ -1,0 +1,257 @@
+/* Reset semua margin dan padding, serta menggunakan border-box untuk model box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling untuk body halaman */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+/* Styling untuk judul utama */
+h1 {
+    margin-bottom: 20px;
+    color: yellow;
+    text-shadow: 0 0 10px rgba(255, 255, 0, 0.5);
+}
+
+/* Container utama game */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Container untuk informasi game */
+.game-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Papan game */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(31, 20px);
+    grid-template-rows: repeat(21, 20px);
+    gap: 0;
+    border: 2px solid blue;
+    background-color: black;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk setiap sel di papan game */
+.cell {
+    width: 20px;
+    height: 20px;
+}
+
+/* Styling untuk dinding */
+.wall {
+    background-color: blue;
+}
+
+/* Styling untuk titik biasa */
+.dot {
+    width: 6px;
+    height: 6px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 7px;
+}
+
+/* Styling untuk power pellet */
+.power-pellet {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border-radius: 50%;
+    margin: 4px;
+    animation: pulse 1s infinite alternate;
+}
+
+/* Animasi untuk power pellet */
+@keyframes pulse {
+    from { opacity: 1; }
+    to { opacity: 0.3; }
+}
+
+/* Styling untuk Pacman */
+.pacman {
+    width: 18px;
+    height: 18px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: relative;
+    margin: 1px;
+}
+
+/* Mulut Pacman menggunakan pseudo-element */
+.pacman::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 9px solid transparent;
+    border-right: 9px solid black;
+    transform: rotate(45deg);
+    top: 0;
+    left: 0;
+}
+
+/* Rotasi mulut Pacman untuk arah kanan */
+.pacman.right::before {
+    transform: rotate(0);
+}
+
+/* Rotasi mulut Pacman untuk arah bawah */
+.pacman.down::before {
+    transform: rotate(90deg);
+}
+
+/* Rotasi mulut Pacman untuk arah kiri */
+.pacman.left::before {
+    transform: rotate(180deg);
+}
+
+/* Rotasi mulut Pacman untuk arah atas */
+.pacman.up::before {
+    transform: rotate(270deg);
+}
+
+/* Styling untuk hantu */
+.ghost {
+    width: 18px;
+    height: 18px;
+    border-radius: 10px 10px 0 0;
+    margin: 1px;
+    position: relative;
+}
+
+/* Bagian atas hantu (kepala) */
+.ghost::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: inherit;
+    border-radius: 50%;
+    bottom: 9px;
+}
+
+/* Bagian bawah hantu (kaki) */
+.ghost::after {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 5px;
+    bottom: 0;
+    background-color: inherit;
+}
+
+/* Warna untuk hantu Blinky */
+.blinky { background-color: red; }
+
+/* Warna untuk hantu Pinky */
+.pinky { background-color: pink; }
+
+/* Warna untuk hantu Inky */
+.inky { background-color: cyan; }
+
+/* Warna untuk hantu Clyde */
+.clyde { background-color: orange; }
+
+/* Styling untuk hantu saat takut */
+.scared {
+    background-color: white !important;
+    animation: scared-animation 0.5s infinite alternate;
+}
+
+/* Animasi untuk hantu takut */
+@keyframes scared-animation {
+    from { opacity: 1; }
+    to { opacity: 0.7; }
+}
+
+/* Container untuk kontrol game */
+.controls {
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Styling untuk tombol */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: yellow;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: all 0.3s;
+}
+
+/* Efek hover untuk tombol */
+button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.05);
+}
+
+/* Container untuk instruksi */
+.instructions {
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+/* Styling untuk layar game over dan menang */
+.game-over, .game-won {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    display: none;
+}
+
+/* Styling untuk judul game over dan menang */
+.game-over h2, .game-won h2 {
+    color: red;
+    margin-bottom: 20px;
+}
+
+/* Warna khusus untuk judul menang */
+.game-won h2 {
+    color: green;
+}
+
+/* Styling untuk kontrol volume */
+.volume-control {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Styling untuk label volume */
+.volume-control label {
+    font-size: 14px;
+}

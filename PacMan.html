@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pacman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>PACMAN GAME</h1>
+    
+    <div class="game-container">
+        <div class="game-info">
+            <div>Score: <span id="score">0</span></div>
+            <div>Lives: <span id="lives">3</span></div>
+        </div>
+        
+        <div id="game-board"></div>
+        
+        <div class="controls">
+            <button id="start-btn">Start Game</button>
+            <button id="reset-btn">Reset Game</button>
+        </div>
+    </div>
+    
+    <div id="game-over" class="game-over">
+        <h2>GAME OVER</h2>
+        <p>Skor akhir: <span id="final-score">0</span></p>
+        <button id="restart-btn">Main Lagi</button>
+    </div>
+    
+    <div id="game-won" class="game-won">
+        <h2>YOU WIN!</h2>
+        <p>Skor akhir: <span id="win-score">0</span></p>
+        <button id="play-again-btn">Main Lagi</button>
+    </div>
+
+    <!-- Elemen audio untuk suara game -->
+    <audio id="eat-sound" src="eat.wav" preload="auto"></audio>
+    <audio id="background-sound" src="background.wav" preload="auto" loop></audio>
+    <audio id="gameover-sound" src="over.wav" preload="auto"></audio>
+    <audio id="victory-sound" src="victory.wav" preload="auto"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
